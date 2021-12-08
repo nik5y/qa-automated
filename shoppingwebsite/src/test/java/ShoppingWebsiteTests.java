@@ -21,7 +21,7 @@ public class ShoppingWebsiteTests {
 	ResultsPage resultsPage = PageFactory.initElements(driver, ResultsPage.class);
 	
 	@BeforeClass
-	public static void init() {
+	public static void init() throws Exception {
 		driver = WebDriverFactory.createWebDriver();
 	}
 	

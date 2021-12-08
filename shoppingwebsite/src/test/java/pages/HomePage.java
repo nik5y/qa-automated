@@ -17,7 +17,4 @@ public class HomePage {
 		searchBar.sendKeys(input);
 		searchButton.click();
 	}
-
-	
-	
 }

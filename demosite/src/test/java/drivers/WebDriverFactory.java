@@ -11,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class WebDriverFactory {
 	
-	public static WebDriver createWebDriver() {
+	public static WebDriver createWebDriver() throws Exception {
 		
 		String newDriverString = System.getProperty("browser", "chrome");
 		
@@ -36,7 +36,7 @@ public class WebDriverFactory {
             
 			return new ChromeDriver(cOptions);
 		default:
-			return new ChromeDriver();
+			throw new Exception("Unknown Browser");
 		}		
 		
 	}

@@ -17,7 +17,7 @@ public class DemoSiteTests {
 	LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 	
 	@BeforeClass
-	public static void setDriver() {
+	public static void setDriver() throws Exception {
 		driver = WebDriverFactory.createWebDriver();
 //		driver.manage().window().setSize(new Dimension(1000,800));
 	}
