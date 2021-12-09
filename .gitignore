@@ -10,3 +10,9 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 *DS_Store
+Automated Testing Exercise Starter_V1.docx
+*.project
+*.classpath
+*org.eclipse.jdt.core.prefs
+*org.eclipse.m2e.core.prefs
+
