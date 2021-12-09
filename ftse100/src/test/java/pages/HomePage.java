@@ -20,15 +20,15 @@ public class HomePage {
 		acceptCookieButton.click();
 	}
 	
-	public void findFallersRisers() {
+	public double[] findFallersRisers() {
 		System.out.println("Searching through elements...");
 		List<WebElement> list = stockView.findElements(By.xpath("//span[@data-field='perc' and @class='box-block']"));
 		
 		String riserStockId = "";
 		String fallerStockId = "";
 		
-		double riserChange = -100d;
-		double fallerChange = 100d;
+		double riserChange = -101d;
+		double fallerChange = 101d;
 		
 		for ( WebElement e : list) {
 			double change = Double.parseDouble(e.getText().substring(0, e.getText().length()-1));
@@ -44,5 +44,7 @@ public class HomePage {
 		
 		System.out.println("Riser: " + riserStockId + " +" + riserChange + '%');
 		System.out.println("Faller: " + fallerStockId + ' ' + fallerChange + '%');
+		
+		return new double[]{fallerChange, riserChange};
 	}
 }

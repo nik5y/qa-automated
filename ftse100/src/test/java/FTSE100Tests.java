@@ -1,3 +1,6 @@
+import static org.junit.Assert.assertTrue;
+
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.AfterClass;
@@ -22,7 +25,7 @@ public class FTSE100Tests {
 	
 	@Before
 	public void setup() {
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		try {
 			driver.get(HomePage.url);
 		} catch (Exception e) {
@@ -34,7 +37,10 @@ public class FTSE100Tests {
 	@Test
 	public void fallersRisers() {
 		homePage.acceptCookies();
-		homePage.findFallersRisers();
+		double[] fallerRiserChanges = homePage.findFallersRisers();
+		//Asserting the faller and riser %changes were updated from initial impossible values
+		assertTrue(fallerRiserChanges[0] != 101d);
+		assertTrue(fallerRiserChanges[1] != -101d);
 	}
 	
 	@AfterClass
